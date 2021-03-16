@@ -37,7 +37,8 @@ spec:
       containers:
         - name: test-eureka
           image: test-eureka:master
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
       imagePullSecrets:
-        - name: docker-harbor-registry
+        - name: mydockerhubregistrykey
