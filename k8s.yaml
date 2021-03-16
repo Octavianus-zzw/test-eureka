@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
         - name: test-eureka
-          image: test-eureka:master
+          image: octavianuszzw/test-eureka:master
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
