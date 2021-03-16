@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-eureka
+  namespace: spring-application
+  labels:
+    app: test-eureka
+spec:
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 48080
+  selector:
+    app: test-eureka
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-eureka
+  namespace: spring-application
+  labels:
+    app: test-eureka
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: test-eureka
+  template:
+    metadata:
+      namespace: spring-application
+      labels:
+        app: test-eureka
+    spec:
+      containers:
+        - name: test-eureka
+          image: test-eureka:master
+          ports:
+            - containerPort: 8080
+      imagePullSecrets:
+        - name: docker-harbor-registry
