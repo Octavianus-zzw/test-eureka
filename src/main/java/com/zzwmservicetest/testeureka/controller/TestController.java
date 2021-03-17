@@ -12,7 +12,7 @@ public class TestController {
     @Value("${eureka.client.service-url.defaultZone}")
     private String eurekaZone;
 
-    @GetMapping
+    @GetMapping(value = "/get_config")
     public String getConfig() {
         return this.port + this.eurekaZone;
     }
