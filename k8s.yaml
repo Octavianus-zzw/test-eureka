@@ -47,7 +47,7 @@ spec:
                 fieldRef:
                   fieldPath: metadata.name
             - name: EUREKA_INSTANCE_HOSTNAME
-              value: ${MY_POD_NAME}.eureka
+              value: ${MY_POD_NAME}.test-eureka
             - name: EUREKA_SERVER
               value: "http://test-eureka-0.test-eureka:8080/eureka/,http://test-eureka-1.test-eureka:8080/eureka/,http://test-eureka-2.test-eureka:8080/eureka/"
       imagePullSecrets:
