@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: test-eureka
-  namespace: apollo
+  namespace: spring-application
   labels:
     app: test-eureka
 spec:
@@ -20,7 +20,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: test-eureka
-  namespace: apollo
+  namespace: spring-application
   labels:
     app: test-eureka
 spec:
@@ -30,7 +30,7 @@ spec:
       app: test-eureka
   template:
     metadata:
-      namespace: apollo
+      namespace: spring-application
       labels:
         app: test-eureka
     spec:
