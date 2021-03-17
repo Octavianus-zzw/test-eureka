@@ -24,6 +24,7 @@ metadata:
   labels:
     app: test-eureka
 spec:
+  serviceName: "test-eureka"
   replicas: 3
   selector:
     matchLabels:
