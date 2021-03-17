@@ -46,6 +46,6 @@ spec:
                 fieldRef:
                   fieldPath: metadata.name
             - name: EUREKA_INSTANCE_HOSTNAME
-                value: ${MY_POD_NAME}.eureka
+              value: ${MY_POD_NAME}.eureka
       imagePullSecrets:
         - name: mydockerhubregistrykey
