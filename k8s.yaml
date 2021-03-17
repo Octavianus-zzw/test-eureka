@@ -42,9 +42,9 @@ spec:
             - containerPort: 8080
           env:
             - name: MY_POD_NAME
-                valueFrom:
-                  fieldRef:
-                    fieldPath: metadata.name
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
             - name: EUREKA_INSTANCE_HOSTNAME
                 value: ${MY_POD_NAME}.eureka
       imagePullSecrets:
