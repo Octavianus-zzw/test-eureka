@@ -24,7 +24,7 @@ metadata:
   labels:
     app: test-eureka
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: test-eureka
@@ -40,5 +40,12 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
+          env:
+            - name: MY_POD_NAME
+                valueFrom:
+                  fieldRef:
+                    fieldPath: metadata.name
+            - name: EUREKA_INSTANCE_HOSTNAME
+                value: ${MY_POD_NAME}.eureka
       imagePullSecrets:
         - name: mydockerhubregistrykey
