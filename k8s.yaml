@@ -42,6 +42,8 @@ spec:
           ports:
             - containerPort: 8080
           env:
+            - name: GIT_COMMIT_ID
+              value: {BUILD_SIGN_ID}
             - name: MY_POD_NAME
               valueFrom:
                 fieldRef:
